@@ -48,7 +48,7 @@ export default {
     return {
       desserts: [
         {
-          no: 1,2
+          no: 1,
           name: "สวัสดี หมีหอม",
           Id: 1234567891234,
           family_name: "อะไรไม่รู้",
