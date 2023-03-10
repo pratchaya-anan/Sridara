@@ -14,7 +14,7 @@
           <th class="text-left">สัญชาติ</th>
           <th class="text-left">เพศ</th>
           <th class="text-left">เตียง</th>
-          <th class="text-left">ตรวจลงตราเลขที่</th>
+          <th class="text-left">ตรวจลงตราเลขที่22222222</th>
         </tr>
       </thead>
       <tbody>
