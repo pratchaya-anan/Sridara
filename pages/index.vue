@@ -11,7 +11,7 @@
           <th class="text-left">วันที่ออก</th>
           <th class="text-left">วันที่หมด</th>
           <th class="text-left">ว/ด/ป เกิด</th>
-          <th class="text-left">สัญชาติ</th>
+          <th class="text-left">เผ่าพันธุ์</th>
           <th class="text-left">เพศ</th>
           <th class="text-left">เตียง</th>
           <th class="text-left">ตรวจลงตราเลขที่22222222</th>
