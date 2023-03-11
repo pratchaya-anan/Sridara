@@ -50,19 +50,19 @@
           id="mobile-menu-2">
           <ul
             class="flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-            <li>
+            <li @click="$router.push('/')">
               <v-btn variant="flat">หนัาหลัก</v-btn>
             </li>
-            <li>
+            <li @click="$router.push('/')">
               <v-btn variant="flat">ข้อมูลทัวร์</v-btn>
             </li>
-            <li>
+            <li @click="$router.push('/')">
               <v-btn variant="flat">จัดการทัวร์</v-btn>
             </li>
-            <li>
+            <li @click="$router.push('/')">
               <v-btn variant="flat">ใบเสนอราคา</v-btn>
             </li>
-            <li>
+            <li @click="$router.push('/')">
               <v-btn variant="flat">ติดต่อเรา</v-btn>
             </li>
           </ul>
