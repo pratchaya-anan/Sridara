@@ -59,7 +59,6 @@ export const group_members = (
 };
 
 export const group_tours = (
-  id: string,
   trip_name: string,
   program_tour: string,
   go_date: Date,
@@ -74,9 +73,6 @@ export const group_tours = (
 ) => {
   return {
     fields: {
-      id: {
-        stringValue: id,
-      },
       trip_name: {
         stringValue: trip_name,
       },
@@ -115,7 +111,6 @@ export const group_tours = (
 };
 
 export const hotel_tour = (
-  id: string,
   tour_id: string,
   name: string,
   amount_room: number,
@@ -124,9 +119,6 @@ export const hotel_tour = (
 ) => {
   return {
     fields: {
-      id: {
-        stringValue: id,
-      },
       tour_id: {
         stringValue: tour_id,
       },

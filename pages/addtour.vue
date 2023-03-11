@@ -1,11 +1,5 @@
 <template>
-  <div
-    style="
-      border-radius: 1rem;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-      margin: 1rem;
-    ">
+  <div style="border-radius: 1rem; margin: 1rem">
     <v-row style="margin: 1rem">
       <v-col
         style="
@@ -28,6 +22,7 @@
             >
             <input
               type="text"
+              v-model="tour_name"
               id="large-input"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" /> </v-col
           ><v-col>
@@ -38,6 +33,7 @@
             >
             <input
               type="text"
+              v-model="tour_program"
               id="large-input"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" /> </v-col
         ></v-row>
@@ -52,6 +48,7 @@
             <input
               type="text"
               id="base-input"
+              v-model="g_name"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </v-col>
 
@@ -63,14 +60,16 @@
             >
             <input
               type="text"
+              v-model="g_tel"
               id="small-input"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" /> </v-col
           ><v-col cols="2">
             <br />
             <v-btn
               variant="tonal"
+              @click="addGuide"
               color="orange-lighten-1"
-              style="margin-top: 2px"
+              style="margin-top: 5px"
               >เพิ่มไกด์</v-btn
             >
           </v-col>
@@ -87,120 +86,107 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>สมชัย</td>
-                  <td>02545887458</td>
+                <tr v-for="(j, l) in guide_tel" :key="l">
+                  <td>{{ guide_name[l] }}</td>
+                  <td>{{ j }}</td>
                 </tr>
               </tbody>
             </v-table>
           </v-col>
         </v-row>
         <v-row>
-          <v-col>
+          <v-col cols="3">
             <label
               for="base-input"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >จำนวนวัน</label
             >
             <input
-              type="text"
+              type="number"
+              v-model.number="day"
               id="base-input"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </v-col>
 
-          <v-col>
+          <v-col cols="3">
             <label
               for="base-input"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >จำนวนคืน</label
             >
             <input
-              type="text"
+              type="number"
+              id="small-input"
+              v-model.number="night"
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          </v-col>
+          <v-col
+            ><label
+              for="base-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >ระยะเวลา</label
+            ><a-range-picker
+              :locale="locale"
+              v-model:value="d_range"
+              format="DD/MM/YYYY"
+              style="
+                height: 4.7vmin;
+                background-color: #f9fafb;
+                border-radius: 0.4rem;
+                width: 100%;
+              "
+          /></v-col>
+        </v-row>
+
+        <v-row>
+          <v-col cols="3">
+            <label
+              for="base-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >จำนวนลูกทัวร์</label
+            >
+            <input
+              type="number"
+              v-model.number="members"
               id="small-input"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </v-col>
+          <v-col>
+            <label
+              for="base-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >เที่ยวบินหรือพาหนะอื่นๆขาไป</label
+            >
+            <input
+              type="text"
+              id="large-input"
+              v-model="vehicle_out"
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          </v-col>
+          <v-col>
+            <label
+              for="base-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >เที่ยวบินหรือพาหนะอื่นๆขากลับ</label
+            >
+            <input
+              type="text"
+              v-model="vehicle_in"
+              id="large-input"
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          </v-col>
         </v-row>
-
-        <div date-rangepicker class="flex items-center">
-          <div class="relative">
-            <div
-              class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg
-                aria-hidden="true"
-                class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <input
-              name="start"
-              type="text"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Select date start" />
-          </div>
-          <span class="mx-4 text-gray-500">to</span>
-          <div class="relative">
-            <div
-              class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg
-                aria-hidden="true"
-                class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <input
-              name="end"
-              type="text"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Select date end" />
-          </div>
-        </div>
-
-        <br />
-        <div class="mb-6">
-          <label
-            for="base-input"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >จำนวนลูกทัวร์</label
+        <v-row>
+          <v-col
+            ><v-btn
+              variant="tonal"
+              block
+              color="green-accent-4"
+              @click="addTourPackage"
+              >เพิ่มทัวร์</v-btn
+            ></v-col
           >
-          <input
-            type="text"
-            id="small-input"
-            class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-        </div>
-        <div class="mb-6">
-          <label
-            for="base-input"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >เที่ยวบินหรือพาหนะอื่นๆขาไป</label
-          >
-          <input
-            type="text"
-            id="small-input"
-            class="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-        </div>
-        <div class="mb-6">
-          <label
-            for="base-input"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >เที่ยวบินหรือพาหนะอื่นๆขากลับ</label
-          >
-          <input
-            type="text"
-            id="small-input"
-            class="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-        </div>
+        </v-row>
       </v-col>
 
       <v-col
@@ -225,126 +211,129 @@
             id="large-input"
             class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
         </div>
-        <div class="mb-6">
-          <label
-            for="base-input"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >จำนวนห้องพัก</label
+        <v-row>
+          <v-col>
+            <label
+              for="base-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >จำนวนห้องพัก</label
+            >
+            <input
+              type="text"
+              id="base-input"
+              class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          </v-col>
+          <v-col
+            ><label
+              for="base-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >ระยะเวลา</label
+            ><a-range-picker
+              :locale="locale"
+              format="DD/MM/YYYY"
+              style="
+                height: 4.7vmin;
+                background-color: #f9fafb;
+                border-radius: 0.4rem;
+                width: 100%;
+              "
+          /></v-col>
+        </v-row>
+
+        <v-row>
+          <v-col
+            ><v-btn variant="tonal" block color="teal-accent-4"
+              >เพิ่มโรงแรม</v-btn
+            ></v-col
           >
-          <input
-            type="text"
-            id="base-input"
-            class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-        </div>
-
-        <div date-rangepicker class="flex items-center">
-          <div class="relative">
-            <div
-              class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg
-                aria-hidden="true"
-                class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <input
-              name="start"
-              type="text"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="วันที่เช็ดอินน์" />
-          </div>
-          <span class="mx-4 text-gray-500">ถึง</span>
-          <div class="relative">
-            <div
-              class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg
-                aria-hidden="true"
-                class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <input
-              name="end"
-              type="text"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="วันที่เช็ดเอ้าท์" />
-          </div>
-        </div>
-
-        <button
-          type="button"
-          style="margin: 1rem"
-          class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-          เพิ่มโรงแรม
-        </button>
-
-        <v-table fixed-header height="300px">
+        </v-row>
+        <br />
+        <v-table
+          density="compact"
+          fixed-header
+          height="220px"
+          style="border: 1px solid #cfd8dc">
           <thead class="text-head-table">
             <tr>
               <th class="text-left">ชื่อโรงแรม</th>
               <th class="text-left">จำนวนห้องพัก</th>
               <th class="text-left">วันเช็คอินน์</th>
               <th class="text-left">วันเช็คเอ้าท์</th>
-              <th class="text-left">จัดการ</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in desserts" :key="item.name">
-              <td>{{ item.no }}</td>
-              <td>{{ item.name }}</td>
-              <td>{{ item.Id }}</td>
-              <td>{{ item.family_name }}</td>
-              <td class="px-6 py-4">
-                <a
-                  href="#"
-                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >Edit</a
-                >
-              </td>
+            <tr>
+              <td>ส้มเซง</td>
+              <td>1000</td>
+              <td>11/22/33</td>
+              <td>33/22/55</td>
             </tr>
           </tbody>
         </v-table>
       </v-col>
     </v-row>
-
-    <div
-      style="display: flex; justify-content: center"
-      @click="$router.push('/addusertour')">
-      <button
-        type="button"
-        style="margin: 1rem"
-        class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-        เพิ่มข้อมูล
-      </button>
-    </div>
   </div>
 </template>
-
 <script lang="ts">
+import { group_tours } from "~~/services/payload";
+import { create_data } from "~~/services/configs";
 import { defineComponent } from "vue";
-
+import locale from "ant-design-vue/es/date-picker/locale/th_TH";
 export default defineComponent({
-  head: {
-    title: "My awesome project", // Other meta information
-    script: [
-      {
-        hid: "stripe",
-        src: "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/datepicker.min.js",
-        defer: true,
-      },
-    ],
+  setup() {
+    return {
+      locale,
+    };
+  },
+  data() {
+    return {
+      tour_name: "",
+      tour_program: "",
+      guide_name: [] as any,
+      guide_tel: [] as any,
+      day: 0,
+      night: 0,
+      go_date: "",
+      back_date: "",
+      members: 0,
+      vehicle_in: "",
+      vehicle_out: "",
+      g_name: "",
+      g_tel: "",
+      d_range: [],
+    };
+  },
+  watch: {
+    d_range(newValue) {
+      this.go_date = newValue[0];
+      this.back_date = newValue[1];
+    },
+  },
+  methods: {
+    addTourPackage() {
+      const raw = group_tours(
+        this.tour_name,
+        this.tour_program,
+        new Date(this.go_date),
+        new Date(this.back_date),
+        this.day,
+        this.night,
+        this.vehicle_in,
+        this.vehicle_out,
+        this.guide_name,
+        this.guide_tel,
+        this.members
+      );
+      create_data("group_tour", raw);
+    },
+    addGuide() {
+      if (this.g_name && this.g_tel) {
+        this.guide_name.push(this.g_name);
+        this.guide_tel.push(this.g_tel);
+      }
+      this.g_name = "";
+      this.g_tel = "";
+    },
   },
 });
 </script>

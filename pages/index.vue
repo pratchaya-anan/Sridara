@@ -48,7 +48,7 @@
               {{ item.fields.vehicle_outcome.stringValue }}
             </td>
             <td class="px-6 py-4">
-              {{ item.fields.members.stringValue }}
+              {{ item.fields.amount_member.stringValue }}
             </td>
           </tr>
         </tbody>
