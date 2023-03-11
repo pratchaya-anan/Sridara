@@ -64,6 +64,7 @@ export default {
     read_all_data("group_tour").then((result) => {
       console.log(result);
       this.tour_ls = result;
+      console.log(this.tour_ls);
     });
   },
   data() {
