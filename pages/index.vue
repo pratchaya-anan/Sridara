@@ -36,7 +36,7 @@
               {{ item.fields.back_date.stringValue }}
             </td>
             <td class="px-6 py-4">
-              {{ item.fields.day.stringValue }}
+              {{ tem.fields.day.stringValue }}
             </td>
             <td class="px-6 py-4">
               {{ item.fields.night.stringValue }}
@@ -79,6 +79,7 @@ export default {
   background-color: rgb(255, 255, 255);
   transition: 0.2s;
 }
+
 .table-row-hover:hover {
   background-color: rgb(236, 236, 236);
   transition: 0.2s;

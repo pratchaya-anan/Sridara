@@ -20,25 +20,20 @@
           id="mobile-menu-2">
           <ul
             class="flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-            <li>
-              <v-btn variant="flat">จัดการข้อมูลทัวร์</v-btn>
+            <li @click="$router.push('/')">
+              <v-btn variant="flat">หนัาหลัก</v-btn>
             </li>
-            <li>
-              <v-btn variant="flat">จัดการใบแจ้งหนี้</v-btn>
+            <li @click="$router.push('/')">
+              <v-btn variant="flat">ข้อมูลทัวร์</v-btn>
             </li>
-            <li>
-              <v-btn variant="flat">จัดการใบเสนอราคา</v-btn>
+            <li @click="$router.push('/addtour')">
+              <v-btn variant="flat">จัดการทัวร์</v-btn>
             </li>
-            <li>
-              <v-btn variant="flat">จัดการใบกำกับภาษี</v-btn>
+            <li @click="$router.push('/')">
+              <v-btn variant="flat">ใบเสนอราคา</v-btn>
             </li>
-            <li>
-              <v-btn variant="flat">จัดการใบเสร็จรับเงิน</v-btn>
-            </li>
-            <li>
-              <v-btn variant="tonal" color="green-darken-2"
-                >ลงชื่อเข้าใช้</v-btn
-              >
+            <li @click="$router.push('/')">
+              <v-btn variant="flat">ติดต่อเรา</v-btn>
             </li>
           </ul>
         </div>
