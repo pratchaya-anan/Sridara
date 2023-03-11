@@ -48,7 +48,7 @@
               {{ item.fields.vehicle_outcome.stringValue }}
             </td>
             <td class="px-6 py-4">
-              {{ item.fields.members.stringValue }}
+              {{ item.fields.amount_member.stringValue }}
             </td>
           </tr>
         </tbody>
@@ -62,7 +62,9 @@ import { read_all_data } from "~~/services/configs";
 export default {
   mounted() {
     read_all_data("group_tour").then((result) => {
+      console.log(result);
       this.tour_ls = result;
+      console.log(this.tour_ls);
     });
   },
   data() {
@@ -79,6 +81,7 @@ export default {
   background-color: rgb(255, 255, 255);
   transition: 0.2s;
 }
+
 .table-row-hover:hover {
   background-color: rgb(236, 236, 236);
   transition: 0.2s;
