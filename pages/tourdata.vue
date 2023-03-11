@@ -33,16 +33,17 @@
         
                         
           <tr>
-            <th scope="col" class="px-6 py-3">ชื่อทริปทัวร์</th>
-            <th scope="col" class="px-6 py-3">ชื่อโปรแกรมทัวร์</th>
-            <th scope="col" class="px-6 py-3">วันที่เริ่มทริป</th>
-            <th scope="col" class="px-6 py-3">วันที่จบทริป</th>
-            <th scope="col" class="px-6 py-3">วัน</th>
-            <th scope="col" class="px-6 py-3">คืน</th>
-            <th scope="col" class="px-6 py-3">เที่ยวบินหรือพาหนะอื่นขาไป</th>
-            <th scope="col" class="px-6 py-3">เที่ยวบินหรือพาหนะอื่นขากลับ</th>
-
-            <th scope="col" class="px-6 py-3">จำนวนลูกทัวร์</th>
+            <th scope="col" class="px-6 py-3">ลำดับ</th>
+            <th scope="col" class="px-6 py-3">ชื่อ-นามสกุลภาษาไทย</th>
+            <th scope="col" class="px-6 py-3">หมายเลขบัตรประชาชน</th>
+            <th scope="col" class="px-6 py-3">Family Name and First Name</th>
+            <th scope="col" class="px-6 py-3">No.passport</th>
+            <th scope="col" class="px-6 py-3">วันที่ออก</th>
+            <th scope="col" class="px-6 py-3">วันที่หมด</th>
+            <th scope="col" class="px-6 py-3">ว / ด / ป เกิด</th>
+            <th scope="col" class="px-6 py-3">สัญชาติ</th>
+            <th scope="col" class="px-6 py-3">เพศ</th>
+            <th scope="col" class="px-6 py-3">ตรวจลงตราเลขที</th>
           </tr>
         </thead>
         <tbody>
