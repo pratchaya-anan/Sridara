@@ -23,35 +23,37 @@
             class="table-row-hover"
             v-for="(item, index) in tour_ls"
             :key="index">
-            <td class="px-6 py-4">
-              {{ item.fields.trip_name.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.program_tour.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.go_date.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.back_date.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.day.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.night.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.vehicle_income.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.vehicle_outcome.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.members.stringValue }}
-            </td>
-          </tr>
-        </tbody>
+            <!-- <div @click="$router.push()"> -->
+              <td class="px-6 py-4">
+                {{ item.fields.trip_name.stringValue }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.fields.program_tour.stringValue }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.fields.go_date.stringValue }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.fields.back_date.stringValue }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.fields.day.stringValue }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.fields.night.stringValue }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.fields.vehicle_income.stringValue }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.fields.vehicle_outcome.stringValue }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.fields.members.stringValue }}
+              </td>
+            <!-- </div> -->
+            </tr>
+          </tbody>
       </table>
     </div>
   </section>

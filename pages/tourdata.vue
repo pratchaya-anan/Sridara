@@ -54,11 +54,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="table-row-hover" 
+          <tr
+          class="table-row-hover" 
           v-for="(item, index) in member_ls" 
           :key="index">
             <td class="px-6 py-4">
-              {{ index }}
+              {{ index+1 }}
             </td>
             <td class="px-6 py-4">
               {{ item.fields.thai_name.stringValue }}
@@ -91,44 +92,10 @@
               {{ item.fields.id.stringValue }}
             </td>
             <td class="px-6 py-4">
-              {{ item.fields.bed_type.id.stringValue }}
+              {{ item.fields.bed_type.stringValue }}
             </td>
           </tr>
         </tbody>
-        <!-- <tbody>
-          <tr
-            class="table-row-hover"
-            v-for="(item, index) in tour_ls"
-            :key="index">
-            <td class="px-6 py-4">
-              {{ item.fields.trip_name.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.program_tour.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.go_date.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.back_date.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.day.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.night.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.vehicle_income.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.vehicle_outcome.stringValue }}
-            </td>
-            <td class="px-6 py-4">
-              {{ item.fields.members.stringValue }}
-            </td>
-          </tr>
-        </tbody> -->
       </table>
     </div>
   </section>
@@ -140,7 +107,7 @@ export default {
   mounted() {
     read_all_data("group_tour").then((result) => {
       this.tour_ls = result;
-      console.log(this.tour_ls)
+      // console.log(this.tour_ls)
     });
     read_all_data("member_tour").then((result) => {
       this.member_ls = result;
