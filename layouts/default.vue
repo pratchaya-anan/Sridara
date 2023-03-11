@@ -26,7 +26,7 @@
             <li @click="$router.push('/')">
               <v-btn variant="flat">ข้อมูลทัวร์</v-btn>
             </li>
-            <li @click="$router.push('/')">
+            <li @click="$router.push('/addtour')">
               <v-btn variant="flat">จัดการทัวร์</v-btn>
             </li>
             <li @click="$router.push('/')">
