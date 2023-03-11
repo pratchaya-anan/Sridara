@@ -63,6 +63,7 @@ export default {
   mounted() {
     read_all_data("group_tour").then((result) => {
       this.tour_ls = result;
+      console.log(this.tour_ls)
     });
   },
   data() {
