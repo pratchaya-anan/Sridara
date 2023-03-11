@@ -36,7 +36,7 @@
               {{ item.fields.back_date.stringValue }}
             </td>
             <td class="px-6 py-4">
-              {{ tem.fields.day.stringValue }}
+              {{ item.fields.day.stringValue }}
             </td>
             <td class="px-6 py-4">
               {{ item.fields.night.stringValue }}
@@ -62,6 +62,7 @@ import { read_all_data } from "~~/services/configs";
 export default {
   mounted() {
     read_all_data("group_tour").then((result) => {
+      console.log(result);
       this.tour_ls = result;
     });
   },
