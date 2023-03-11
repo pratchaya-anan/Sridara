@@ -3,13 +3,11 @@
     <v-container>
       <v-row no-gutters class="v-row-text">
         <v-col cols="auto">
-          <NuxtLink to="/" class="flex items-center">
-            <img
-              src="https://www.adt.or.th/image/ADT1%20-%201108%20-%200263.jpg"
-              class="mr-3 h-12 sm:h-15"
-              alt="Flowbite Logo"
-            />
-          </NuxtLink>
+          <img
+            src="https://www.adt.or.th/image/ADT1%20-%201108%20-%200263.jpg"
+            class="mr-3 h-12 sm:h-15"
+            alt="Flowbite Logo"
+          />
         </v-col>
         <v-col cols="7">
           <v-sheet class="pa-2 ma-2" style="text-align: center">
@@ -26,72 +24,108 @@
         </v-col>
 
         <v-col cols="auto">
-          <v-sheet class="pa-2 ma-2" style="text-align: center">
-            ใบเสนอราคา/ยืนยันการสั่งซื้อ
-            <td></td>
-            Quatation
-          </v-sheet>
-          <v-sheet class="pa-2 ma-2">
-            <p>เลขที่</p>
-            <p>วันที่</p>
-          </v-sheet>
+          <v-table>
+            <td style="text-align: center">
+              <tr>
+                ใบเสนอราคา/ยืนยันการสั่งซื้อ
+              </tr>
+              <tr>
+                Quatation
+              </tr>
+            </td>
+          </v-table>
+          <v-table>
+            <td>
+              <tr>
+                เลขที่
+              </tr>
+              <tr>
+                วันที่
+              </tr>
+            </td>
+            <td>
+              <tr>
+                184648456
+              </tr>
+              <tr>
+                20/02/66
+              </tr>
+            </td>
+          </v-table>
         </v-col>
       </v-row>
 
-      <v-row class="v-row-text">
-        <v-col cols="7">
-          <v-sheet class="pa-2 ma-2"
-            ><a> ชื่อลูกค้า: </a>
-            <a> ........................................ </a></v-sheet
-          >
-          <v-sheet class="pa-2 ma-2"
-            ><a> ID TEX: </a>
-            <a> ........................................ </a></v-sheet
-          >
-          <v-sheet class="pa-2 ma-2"
-            ><a> ชื่อผู้ติดต่อ: </a>
-            <a> ........................................ </a></v-sheet
-          >
-          <v-sheet class="pa-2 ma-2"
-            ><a> ที่อยู่: </a>
-            <a> ........................................ </a></v-sheet
-          >
-        </v-col>
-        <v-col cols="5">
-          <v-sheet class="pa-2 ma-2">
-            <a> รหัสลูกค้า: </a>
-            <a> ........................................ </a>
-          </v-sheet>
-          <v-sheet class="pa-2 ma-2">
-            <a> ผู้เสนอขาย: </a>
-            <a> ........................................ </a>
-          </v-sheet>
-          <v-sheet class="pa-2 ma-2">
-            <a> ฝ่าย: </a> <a> ........................................ </a>
-          </v-sheet>
-          <v-sheet class="pa-2 ma-2">
-            <a> ยืนยันราคาภายใน: </a>
-            <a> ........................................ </a>
-          </v-sheet>
-          <v-sheet class="pa-2 ma-2">
-            <a> วันที่ส่งของ: </a>
-            <a> ........................................ </a>
-          </v-sheet>
-        </v-col>
-      </v-row>
+      <v-table style="font-size: 1.2rem">
+        <td>
+          <tr>
+            ชื่อลูกค้า:
+          </tr>
+          <tr>
+            ID TEX:
+          </tr>
+          <tr>
+            ชื่อผู้ติดต่อ:
+          </tr>
+          <tr>
+            ที่อยู่:
+          </tr>
+        </td>
+        <td>
+          <tr>
+            สมศรี หมีเรืองแสง
+          </tr>
+          <tr>
+            1150
+          </tr>
+          <tr>
+            สมหอม ยอมทุกอย่าง
+          </tr>
+          <tr>
+            15/55 ตำบลศิลา อำเภอเมือง จังหวัดของแก่น 40000
+          </tr>
+        </td>
+        <td>
+          <tr>
+            รหัสลูกค้า:
+          </tr>
+          <tr>
+            ผู้เสนอขาย:
+          </tr>
+          <tr>
+            ฝ่าย:
+          </tr>
+          <tr>
+            ยืนยันราคาภายใน:
+          </tr>
+          <tr>
+            วันที่ส่งของ:
+          </tr>
+        </td>
+        <td>
+          <tr>
+            6111445875
+          </tr>
+          <tr>
+            สมัครใจ จำยอม
+          </tr>
+          <tr>
+            หาของ
+          </tr>
+          <tr>
+            20/05/66
+          </tr>
+          <tr>
+            20/07/66
+          </tr>
+        </td>
+      </v-table>
 
-      <v-row class="v-row-text">
-        <v-col cols="6">
-          <v-sheet class="pa-2 ma-2">
-            <a> โทร: </a> <a> ........................................ </a>
-          </v-sheet>
-        </v-col>
-        <v-col cols="6">
-          <v-sheet class="pa-2 ma-2">
-            <a> Email: </a> <a> ........................................ </a>
-          </v-sheet>
-        </v-col>
-      </v-row>
+      <v-table style="font-size: 1.2rem; margin-top: 2rem">
+        <td>โทร:</td>
+        <td>0661252578</td>
+        <td>Email:</td>
+        <td>st@mail.com</td>
+      </v-table>
 
       <v-table class="v-text-table" fixed-header height="300px">
         <thead>
@@ -141,41 +175,66 @@
             </v-col>
             <v-col cols="3">
               <v-sheet class="pa-2 ma-2" style="font-size: 18px">
-                <p>มัดจำ ............................................</p>
-                <p>รวมเงิน ...........................................</p>
-                <p>ส่วนลดสินค้า .......................................</p>
-                <p>มูลค่าสินค้า ........................................</p>
-                <p>ภาษีมูลค่าเพิ่ม 7 % ..................................</p>
-                <p>จำนวนเงินทั้งสิ้น .....................................</p>
+                <p>มัดจำ ................ 3000</p>
+                <p>รวมเงิน ...............15000</p>
+                <p>ส่วนลดสินค้า ..........300</p>
+                <p>มูลค่าสินค้า ............147000</p>
+                <p>ภาษีมูลค่าเพิ่ม 7 % ......1347</p>
+                <p>จำนวนเงินทั้งสิ้น ........15047</p>
               </v-sheet>
             </v-col>
           </v-row>
         </v-card-item>
       </v-card>
 
+      <v-table style="text-align: right; margin-right: 3vmin">
+        <tr>
+          <td>
+            <p>ข้าพเจ้าเห็นชอบตามรายการที่เสนอและ</p>
+            <p>ขอสั่งซื้อตามรายละเอียดนี้ทุกประการ</p>
+          </td>
+        </tr>
+      </v-table>
+
       <v-card variant="none">
         <v-row style="text-align: center">
-          <v-col class="pa-10 ma-2"> </v-col>
-          <v-col class="pa-10 ma-2"> </v-col>
-          <v-col class="pa-10 ma-2"> </v-col>
-          <v-col class="pa-10 ma-2"
-            ><p>ข้าพเจ้าเห็นชอบตามรายการที่เสนอและ</p>
-            <p>ขอสั่งซื้อตามรายละเอียดนี้ทุกประการ</p>
+          <v-col style="display: flex; flex-direction: column">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a0/%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8A%E0%B8%B2_%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%97%E0%B8%A3%E0%B8%B1%E0%B8%9E%E0%B8%A2%E0%B9%8C.png"
+              class="h-12 sm:h-15"
+              alt="Flowbite Logo"
+            /><v-sheet> ผู้เสนอราคา </v-sheet>
           </v-col>
-        </v-row>
-        <v-row style="text-align: center">
-          <v-col> <v-sheet class="pa-0.5 ma-2"> ผู้เสนอราคา </v-sheet> </v-col>
-          <v-col> <v-sheet class="pa-0.5 ma-2"> ผู้รับเงิน </v-sheet> </v-col>
-          <v-col> <v-sheet class="pa-0.5 ma-2"> ผู้ตรวจสอบ </v-sheet> </v-col>
-          <v-col>
-            <v-sheet class="pa-0.5 ma-2"> ผู้อนุมัติสั่งซื้อ </v-sheet></v-col
+          <v-col style="display: flex; flex-direction: column"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a0/%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8A%E0%B8%B2_%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%97%E0%B8%A3%E0%B8%B1%E0%B8%9E%E0%B8%A2%E0%B9%8C.png"
+              class="h-12 sm:h-15"
+              alt="Flowbite Logo"
+            />
+            <v-sheet> ผู้รับเงิน </v-sheet>
+          </v-col>
+          <v-col style="display: flex; flex-direction: column"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a0/%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8A%E0%B8%B2_%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%97%E0%B8%A3%E0%B8%B1%E0%B8%9E%E0%B8%A2%E0%B9%8C.png"
+              class="h-12 sm:h-15"
+              alt="Flowbite Logo"
+            />
+            <v-sheet> ผู้ตรวจสอบ </v-sheet>
+          </v-col>
+          <v-col style="display: flex; flex-direction: column"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a0/%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8A%E0%B8%B2_%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%97%E0%B8%A3%E0%B8%B1%E0%B8%9E%E0%B8%A2%E0%B9%8C.png"
+              class="h-12 sm:h-15"
+              alt="Flowbite Logo"
+            />
+            <v-sheet> ผู้อนุมัติสั่งซื้อ </v-sheet></v-col
           >
         </v-row>
-        <v-row>
-          <v-col> <v-sheet> วันที่ </v-sheet> </v-col>
-          <v-col> <v-sheet> วันที่ </v-sheet> </v-col>
-          <v-col> <v-sheet> วันที่ </v-sheet> </v-col>
-          <v-col> <v-sheet> วันที่ </v-sheet></v-col>
+        <v-row style="text-align: center">
+          <v-col> <v-sheet> วันที่ 12/02/66</v-sheet> </v-col>
+          <v-col> <v-sheet> วันที่ 12/02/66</v-sheet> </v-col>
+          <v-col> <v-sheet> วันที่ 12/02/66</v-sheet> </v-col>
+          <v-col> <v-sheet> วันที่ 12/02/66</v-sheet></v-col>
         </v-row>
       </v-card>
     </v-container>
@@ -205,6 +264,66 @@ export default {
   data() {
     return {
       customers: [
+        {
+          no: "1",
+          product_code: "123",
+          product_name: "F",
+          quantity: "20",
+          unit_price: "10",
+          discount: "5",
+          tax: "3",
+          price: 15,
+        },
+        {
+          no: "1",
+          product_code: "123",
+          product_name: "F",
+          quantity: "20",
+          unit_price: "10",
+          discount: "5",
+          tax: "3",
+          price: 15,
+        },
+        {
+          no: "1",
+          product_code: "123",
+          product_name: "F",
+          quantity: "20",
+          unit_price: "10",
+          discount: "5",
+          tax: "3",
+          price: 15,
+        },
+        {
+          no: "1",
+          product_code: "123",
+          product_name: "F",
+          quantity: "20",
+          unit_price: "10",
+          discount: "5",
+          tax: "3",
+          price: 15,
+        },
+        {
+          no: "1",
+          product_code: "123",
+          product_name: "F",
+          quantity: "20",
+          unit_price: "10",
+          discount: "5",
+          tax: "3",
+          price: 15,
+        },
+        {
+          no: "1",
+          product_code: "123",
+          product_name: "F",
+          quantity: "20",
+          unit_price: "10",
+          discount: "5",
+          tax: "3",
+          price: 15,
+        },
         {
           no: "1",
           product_code: "123",
