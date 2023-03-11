@@ -75,19 +75,28 @@
             >
           </v-col>
         </v-row>
-        <div class="mb-6">
-          <label
-            for="base-input"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >ชื่อโปรแกรมทัวร์</label
-          >
-          <input
-            type="text"
-            id="small-input"
-            class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-        </div>
-        <div class="flex">
-          <div class="mb-6">
+        <v-row>
+          <v-col>
+            <v-table
+              density="compact"
+              style="border: 1px solid #cfd8dc; border-radius: 0.5rem">
+              <thead>
+                <tr>
+                  <th class="text-left">ชื่อไกด์</th>
+                  <th class="text-left">เบอร์โทรไกด์</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>สมชัย</td>
+                  <td>02545887458</td>
+                </tr>
+              </tbody>
+            </v-table>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
             <label
               for="base-input"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -97,9 +106,9 @@
               type="text"
               id="base-input"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-          </div>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <div class="mb-6">
+          </v-col>
+
+          <v-col>
             <label
               for="base-input"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -109,8 +118,8 @@
               type="text"
               id="small-input"
               class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-          </div>
-        </div>
+          </v-col>
+        </v-row>
 
         <div date-rangepicker class="flex items-center">
           <div class="relative">
@@ -132,9 +141,9 @@
               name="start"
               type="text"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="เลือกวันที่" />
+              placeholder="Select date start" />
           </div>
-          <span class="mx-4 text-gray-500">ถึง</span>
+          <span class="mx-4 text-gray-500">to</span>
           <div class="relative">
             <div
               class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -154,9 +163,10 @@
               name="end"
               type="text"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="เลือกวันที่" />
+              placeholder="Select date end" />
           </div>
         </div>
+
         <br />
         <div class="mb-6">
           <label
@@ -322,11 +332,19 @@
   </div>
 </template>
 
-<script setup lang="ts">
-// import Datepicker from 'flowbite-datepicker/Datepicker';
+<script lang="ts">
+import { defineComponent } from "vue";
 
-// const datepickerEl = document.getElementById('datepickerId');
-// new Datepicker(datepickerEl, {
-//     // options
-// });
+export default defineComponent({
+  head: {
+    title: "My awesome project", // Other meta information
+    script: [
+      {
+        hid: "stripe",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/datepicker.min.js",
+        defer: true,
+      },
+    ],
+  },
+});
 </script>
