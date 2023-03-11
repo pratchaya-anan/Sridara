@@ -13,6 +13,7 @@
     "nuxt-windicss": "^2.6.0"
   },
   "dependencies": {
+    "@mdi/font": "^7.1.96",
     "axios": "^1.3.4",
     "dayjs": "^1.11.7",
     "flowbite": "^1.6.3",
