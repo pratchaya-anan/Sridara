@@ -139,11 +139,165 @@
               <button type="button" style="margin: 1rem;"
             class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">เพิ่มลูกทัวร์</button>
             </div>
+            
+            
+      <div class="relative overflow-x-auto">
+        <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+          <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400"
+                style="background-color: #81c784">
+
+                  <tr>
+                      <th scope="col" class="px-6 py-3">
+                          ลำดับ
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          ชื่อ-นามสกุลภาษาไทย 
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          หมายเลขบัตรประชาชน
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          Family Name and First Name
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          No.passport
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          วันที่ออก 
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          วันที่หมด
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          ว/ด/ป เกิด
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          สัญชาต
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          เพศ 
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                          ตรวจลงตราเลขที
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          #
+                      </th>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                  </tr>
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          #
+                      </th>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                  </tr>
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          #
+                      </th>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                      <td class="px-6 py-4">
+                          #
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+        </section>
+      </div>
+
+
         </v-col>
-  
-  
-      
-      </v-row>
+
+        </v-row>
   
       <div style="display: flex; justify-content: center;">
         <button type="button" style="margin: 1rem;"
